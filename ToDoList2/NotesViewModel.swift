@@ -42,7 +42,8 @@ class NotesViewModel: ObservableObject {
         saveNotes()
     }
     
-    private func saveNotes() {
+    // Changed from private to public
+    func saveNotes() {
         if let encoded = try? JSONEncoder().encode(notes) {
             UserDefaults.standard.set(encoded, forKey: storageKey)
         }
